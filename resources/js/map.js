@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-
-
+    // Create markers for buses
+    buses.forEach(function(bus) {
+      var marker = L.marker([bus.y, bus.x]).addTo(map);
+    });
 
 });
 

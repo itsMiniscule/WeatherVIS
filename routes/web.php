@@ -3,9 +3,7 @@
 use App\Http\Controllers\DataController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [DataController::class, 'index']);
 
 Route::get('/data/offshore', [DataController::class, 'getOffshoreData']);
 Route::get('/data/onshore', [DataController::class, 'getOnshoreData']);
