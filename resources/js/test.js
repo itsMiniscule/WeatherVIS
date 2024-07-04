@@ -35,18 +35,17 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        data.forEach(item => {
-            // Determine color based on surplus or shortage
-            const color = item.surplus_shortage >= 0 ? 'green' : 'red';
+        const markedPlacesList = document.getElementById('marked-places');
+        markedPlacesList.innerHTML = '';
 
-            // Create a circle marker
-            const marker = L.circleMarker([51.4352, 3.72866], {
+        data.forEach(item => {
+            const color = item.surplus_shortage >= 0 ? 'green' : 'red';
+            const marker = L.circleMarker([item.latitude, item.longitude], {
                 color: color,
                 radius: 10,
                 fillOpacity: 0.5
             }).addTo(map);
 
-            // Bind popup to marker
             marker.bindPopup(`
                 <b>Time:</b> ${item.time}<br>
                 <b>Offshore Wind:</b> ${item.offshore_mwh} MWh<br>
@@ -56,6 +55,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 <b>Demand:</b> ${item.demand_mwh} MWh<br>
                 <b>Surplus/Shortage:</b> ${item.surplus_shortage} MWh
             `);
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item.time} - ${item.latitude}, ${item.longitude}`;
+            markedPlacesList.appendChild(listItem);
         });
     }
 
@@ -79,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Initial fetch and render data
     fetchData().then(data => {
         renderDataOnMap(data);
         renderTable(data);
