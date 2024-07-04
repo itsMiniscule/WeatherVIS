@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             BusSeeder::class,
+            GeneratorSeeder::class,
+            TransformerSeeder::class,
         ]);
     }
 }

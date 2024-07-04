@@ -5,6 +5,7 @@
 <script>
     // Pass the coordinates to JavaScript
     var buses = @json($buses);
+    console.log(buses);
 </script>
 <script src="{{ asset('js/map.js') }}"></script>
 
