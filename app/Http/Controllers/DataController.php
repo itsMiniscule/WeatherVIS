@@ -6,6 +6,7 @@ use App\Models\Bus;
 use App\Models\OffshoreWind;
 use App\Models\OnshoreWind;
 use App\Models\Photovoltaic;
+use App\Models\Producer;
 use App\Models\UnifiedGeneration;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class DataController extends Controller
     {
         // Fetch all buses' coordinates
         $buses = Bus::all(['x', 'y']);
-        return view('index', compact('buses'));
+        $producers = Producer::all(['x', 'y']);
+        return view('index', compact('buses', 'producers'));
     }
 
     public function getOffshoreData()
