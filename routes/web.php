@@ -5,9 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutUsController;
 
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [DataController::class, 'index']);
 
 Route::get('/data/offshore', [DataController::class, 'getOffshoreData']);
 Route::get('/data/onshore', [DataController::class, 'getOnshoreData']);
