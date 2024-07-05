@@ -1,7 +1,7 @@
 <!-- resources/views/components/navbar.blade.php -->
 <nav class="navbar is-transparent navbar-transparent" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item is-size-3" href="#">
+        <a class="navbar-item is-size-3" href="/">
             <strong>WeatherVIS</strong>
         </a>
 

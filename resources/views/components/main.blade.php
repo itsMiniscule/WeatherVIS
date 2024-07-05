@@ -17,25 +17,12 @@
     <!-- JavaScript -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-    <style>
-        .content-center {
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            color: white;
-        }
-        .navbar-transparent {
-            background-color: rgba(45, 55, 72, 0.6); /* Apply a semi-transparent background */
-        }
 
-    </style>
 </head>
 
-<body class="bg-wind-farm bg-cover bg-center min-h-screen text-white">
+
 <x-navbar />
-<main class="content-center">
     {{ $slot }}
-</main>
 <x-footer />
-</body>
+
 </html>

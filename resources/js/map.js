@@ -20,7 +20,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // Array to hold markers for each group
     let markersByGroup = [];
 
-    // Function to add markers for a specific group with a given icon and production multiplier
+    function addLegendItem(iconIndex, productionMultiplier) {
+        const legend = document.getElementById('legend');
+        const legendItem = document.createElement('div');
+        legendItem.className = 'legend-item';
+        legendItem.innerHTML = `
+            <img src="icon${iconIndex + 1}.svg" class="legend-icon"> Production: ${productionMultiplier}
+        `;
+        legend.appendChild(legendItem);
+    }
+
     function addMarkersForGroup(group, iconIndex, productionMultiplier) {
         const icon = icons[iconIndex % icons.length];
         let groupMarkers = [];
@@ -29,11 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
         group.forEach(function (point) {
             let marker = L.marker([point.y, point.x], { icon: icon }).addTo(map);
             groupMarkers.push(marker);
-            groupProduction += productionMultiplier; // Accumulate production
+            groupProduction += productionMultiplier;
         });
+
+        // Add legend item for the group
+        addLegendItem(iconIndex, productionMultiplier);
 
         return { markers: groupMarkers, production: groupProduction };
     }
+
 
     // Function to remove all markers from map
     function removeMarkers(markers) {
@@ -124,13 +137,5 @@ document.addEventListener('DOMContentLoaded', function () {
             markersByGroup.forEach(removeMarkers);
         }
     });
-
-    // Function to handle click event
-    function onMapClick(e) {
-        alert("You clicked the map at " + e.latlng.toString());
-    }
-
-    // Add click event listener to the map
-    map.on('click', onMapClick);
 
 });

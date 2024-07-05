@@ -2,4 +2,11 @@
     height: 800px; /* Set the map height */
     width: 80%;   /* Set the map width */
     margin-top: 2.5%;
+    margin-left: 10%;
+    margin-bottom: 1%;
 }
+
+#legend { padding: 10px; background: white; border: 1px solid #ccc; }
+.legend-item { margin-bottom: 10px; }
+.legend-icon { width: 24px; height: 24px; vertical-align: middle; }
+
