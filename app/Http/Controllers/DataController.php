@@ -18,7 +18,7 @@ class DataController extends Controller
     public function map()
     {
         $buses = Bus::all(['x', 'y']);
-        return view('index', compact('buses'));
+        return view('map', compact('buses'));
     }
 
     public function getOffshoreData()
