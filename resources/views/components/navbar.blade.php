@@ -15,13 +15,13 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-light">
+                    <a class="button is-light" href="/dashboard">
                         Dashboard
                     </a>
-                    <a class="button is-light">
+                    <a class="button is-light" href="/graph">
                         Graph
                     </a>
-                    <a class="button is-light">
+                    <a class="button is-light" href="/map">
                         Map
                     </a>
                 </div>
