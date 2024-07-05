@@ -15,10 +15,10 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-light" href="/dashboard">
+                    <a class="button is-light" href="{{ route('dashboard') }}">
                         Dashboard
                     </a>
-                    <a class="button is-light" href="/graph">
+                    <a class="button is-light" href="{{ route('graph') }}">
                         Graph
                     </a>
                     <a class="button is-light" href="/map">
