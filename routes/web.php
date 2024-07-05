@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DataController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutUsController;
+
 
 Route::get('/', function () {
     return view('index');
@@ -12,3 +14,5 @@ Route::get('/data/onshore', [DataController::class, 'getOnshoreData']);
 Route::get('/data/pv', [DataController::class, 'getPvData']);
 Route::get('/data/unified', [DataController::class, 'getUnifiedData']);
 
+
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('about.us');
