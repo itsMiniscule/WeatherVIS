@@ -13,4 +13,5 @@ Route::get('/data/onshore', [DataController::class, 'getOnshoreData']);
 Route::get('/data/pv', [DataController::class, 'getPvData']);
 Route::get('/data/unified', [DataController::class, 'getUnifiedData']);
 
+Route::get('/about', [DataController::class, 'about'])->name('about');
 

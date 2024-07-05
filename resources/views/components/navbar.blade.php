@@ -24,6 +24,9 @@
                     <a class="button is-light" href="/map">
                         Map
                     </a>
+                    <a class="button is-light" href="{{ route('about') }}">
+                        About Us
+                    </a>
                 </div>
             </div>
         </div>
