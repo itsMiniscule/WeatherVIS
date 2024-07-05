@@ -51,6 +51,11 @@ class DataController extends Controller
         return view('graph', compact('offshore', 'onshore', 'pv', 'unified'));
     }
 
+    public function about()
+    {
+        return view('about');
+    }
+
     public function getOffshoreData()
     {
         return $this->generateRandomData();
