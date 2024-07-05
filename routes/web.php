@@ -3,7 +3,11 @@
 use App\Http\Controllers\DataController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [DataController::class, 'index']);
+Route::get('/', function () {
+    return view('index');
+})->name('home');
+
+Route::get('/map', [DataController::class, 'map'])->name('map');
 
 Route::get('/data/offshore', [DataController::class, 'getOffshoreData']);
 Route::get('/data/onshore', [DataController::class, 'getOnshoreData']);
