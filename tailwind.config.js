@@ -1,12 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
+        './resources/views/**/*.blade.php',
+        './resources/css/**/*.css',
+        './resources/js/**/*.js',
     ],
     theme: {
-        extend: {},
+        extend: {
+            backgroundImage: theme => ({
+                'wind-farm': "url('../assets/wind-farm.jpg')",
+            }),
+        },
     },
     plugins: [],
 }

@@ -1,8 +1,7 @@
 <!-- resources/views/components/navbar.blade.php -->
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar is-transparent navbar-transparent" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item is-size-3" href="#">
-            <!-- Application name -->
             <strong>WeatherVIS</strong>
         </a>
 
@@ -12,11 +11,6 @@
             <span aria-hidden="true"></span>
         </a>
     </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-            <!-- Optional: add items on the left -->
-        </div>
 
         <div class="navbar-end">
             <div class="navbar-item">

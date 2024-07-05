@@ -16,22 +16,19 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <style>
-        .bg-cover-custom {
-            background-color: #2d3748;
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-        }
         .content-center {
             align-items: center;
             height: 100vh;
             text-align: center;
             color: white;
         }
+        .navbar-transparent {
+            background-color: rgba(45, 55, 72, 0.6); /* Apply a semi-transparent background */
+        }
     </style>
 </head>
 
-<body class="bg-cover-custom">
+<body class="bg-wind-farm bg-cover bg-center min-h-screen text-white">
 <x-navbar />
 <main class="content-center">
     {{ $slot }}

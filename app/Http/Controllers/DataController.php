@@ -13,7 +13,10 @@ class DataController extends Controller
 {
     public function index()
     {
-        // Fetch all buses' coordinates
+        return view('home');
+    }
+    public function map()
+    {
         $buses = Bus::all(['x', 'y']);
         return view('index', compact('buses'));
     }
