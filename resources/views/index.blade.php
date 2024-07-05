@@ -7,6 +7,7 @@
         </label>
     </div>
     <div>Total Production: <span id="totalProduction">0</span></div>
+    <div id="legend"></div>
     <div id="map"></div>
 </x-main>
 

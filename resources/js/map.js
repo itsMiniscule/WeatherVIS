@@ -20,6 +20,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // Array to hold markers for each group
     let markersByGroup = [];
 
+    function addLegendItem(iconIndex, productionMultiplier) {
+        const legend = document.getElementById('legend');
+        const legendItem = document.createElement('div');
+        legendItem.className = 'legend-item';
+        legendItem.innerHTML = `
+            <img src="icon${iconIndex + 1}.svg" class="legend-icon"> Production: ${productionMultiplier}
+        `;
+        legend.appendChild(legendItem);
+    }
+
     // Function to add markers for a specific group with a given icon and production multiplier
     function addMarkersForGroup(group, iconIndex, productionMultiplier) {
         const icon = icons[iconIndex % icons.length];
@@ -32,8 +42,15 @@ document.addEventListener('DOMContentLoaded', function () {
             groupProduction += productionMultiplier; // Accumulate production
         });
 
+        // Add legend item for the group
+        addLegendItem(iconIndex, productionMultiplier);
+
         return { markers: groupMarkers, production: groupProduction };
     }
+
+
+
+
 
     // Function to remove all markers from map
     function removeMarkers(markers) {
