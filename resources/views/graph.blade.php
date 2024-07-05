@@ -47,7 +47,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        // Function to create a chart
         function createChart(ctx, label, data, color) {
             new Chart(ctx, {
                 type: 'line',

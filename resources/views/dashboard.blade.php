@@ -117,15 +117,12 @@
     </div>
 
     <script>
-        // Initialize the map
         var map = L.map('map').setView([51.505, -0.09], 13);
 
-        // Load and display tile layers on the map
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Fetch and display data
         fetch('/dashboard', {
             headers: {
                 'Accept': 'application/json'
@@ -133,7 +130,6 @@
         })
             .then(response => response.json())
             .then(data => {
-                // Display bus data on the map
                 let totalProduction = 0;
                 data.buses.forEach(bus => {
                     L.marker([bus.x, bus.y]).addTo(map)
@@ -143,7 +139,6 @@
                 document.getElementById('totalBuses').innerText = data.buses.length;
                 document.getElementById('totalUnified').innerText = totalProduction;
 
-                // Display data in tables
                 function displayData(items, tableId, totalId) {
                     let tableBody = document.querySelector(`#${tableId} tbody`);
                     tableBody.innerHTML = '';
